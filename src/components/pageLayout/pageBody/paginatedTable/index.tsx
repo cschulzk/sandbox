@@ -8,6 +8,7 @@ import useColumns from './UseColumns'
 import Pagination from './Pagination'
 import TableBody from './TableHeader'
 import TableHeader from './TableHeader'
+import { QueryData } from '@/types/data'
 
 const PaginatedTable = () => {
   const columns = useColumns();
@@ -23,7 +24,10 @@ const PaginatedTable = () => {
     pageSize,
   };
 
-  const dataQuery = [] // Write a use memo that uses an api request
+  const dataQuery: QueryData = {data: {
+    rows: [],
+    pageCount: 0,
+  }} // Write a use memo that uses an api request
 
 
   const defaultData = useMemo(() => [], [])
