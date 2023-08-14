@@ -2,7 +2,7 @@ import { fontFamily as _fontFamily } from 'tailwindcss/defaultTheme'
 import { sideNavWidth, mainWidth, footerHeight, headerHeight, bodyHeight } from './dimensions.styling'
 
 /** @type {import('tailwindcss').Config} */
-export const content = ['./src/**/*.{js,jsx,tsx,ts}']
+export const content = ['./src/**/*.{js,jsx,tsx,ts}', './lib/**/*.{js,jsx,tsx,ts}']
 export const theme = {
   fontSize: {
     xs: ['0.75rem', { lineHeight: '1rem' }],

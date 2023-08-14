@@ -8,7 +8,7 @@ const Header = ({title, hasSearch}: {title: string, hasSearch?: boolean}) => {
   return (
     <header className={`${headerPositioning} ${headerStyling}`}>
       <PageTitle title={title} />
-      {/* {hasSearch && <SearchBox />} */}
+      {hasSearch && <SearchBox />}
     </header>
   )
 };

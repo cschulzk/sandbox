@@ -6,15 +6,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Portfolio - C. Schulzke</title>
+        <title>About - C. Schulzke</title>
         <meta
           name="description"
-          content="The hub of all my hobby and professional projects."
+          content="About me as an engineer."
           key="description"
         />
       </Head>
       <PageLayout>
-        <h1>Portfolio</h1>
+        <h1>About</h1>
       </PageLayout>
     </>
   )
