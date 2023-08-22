@@ -14,7 +14,7 @@ export default function Home() {
         />
       </Head>
       <PageLayout>
-        <h1>Portfolio</h1>
+        <>Main page</>
       </PageLayout>
     </>
   )

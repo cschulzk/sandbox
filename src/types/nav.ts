@@ -7,5 +7,6 @@ export interface NavLink {
 
 export interface NavGroup {
   name: string;
+  require_auth?: boolean;
   links: NavLink[];
 };
