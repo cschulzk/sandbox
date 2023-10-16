@@ -1,8 +1,8 @@
 const Copyright = () => {
   return (
-    <p className="text-sm">
+    <small className="text-sm">
       Copyright &copy; {new Date().getFullYear()} {`{NameHere}`}. All rights reserved.
-    </p>
+    </small>
   )
 };
 

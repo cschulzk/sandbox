@@ -1,5 +1,5 @@
 // Side nav and main content widths in units of vw
-export const sideNavWidth = 25;
+export const sideNavWidth = 22;
 export const mainWidth = 100-sideNavWidth;
 
 // The main content header, footer, and body heights in units of vh
