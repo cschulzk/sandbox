@@ -4,13 +4,13 @@ export const sandboxProjects: Project[] = [
   {
     key: 'layout-side-menu',
     title: "Page Layout - Side Menu",
-    url: "",
+    url: "/layout-side-menu",
     description: ``
   },
   {
     key: 'layout-scroll',
     title: "Page Layout - Scroll",
-    url: "",
+    url: "/layout-scroll",
     description: ``
   }
 ]
