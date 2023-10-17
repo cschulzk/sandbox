@@ -28,7 +28,7 @@ const data: DemoData[] = [
   }
 ]
 
-export async function fetchData(
+export async function fetchFakeData(
   res: NextApiResponse,
   req: NextApiRequest
 ) {

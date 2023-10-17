@@ -1,6 +1,6 @@
-import PageLayout from '@/components/pageLayout'
 import Head from 'next/head'
 import React from 'react'
+import DashboardLayout from '../../lib/layouts/dashboardLayout'
 
 export default function Home() {
   return (
@@ -13,9 +13,9 @@ export default function Home() {
           key="description"
         />
       </Head>
-      <PageLayout>
+      <DashboardLayout>
         <h1>Contact</h1>
-      </PageLayout>
+      </DashboardLayout>
     </>
   )
 }

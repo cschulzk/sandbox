@@ -1,11 +1,11 @@
-import PageLayout from "@/components/pageLayout";
-import { titleStyle } from "@/components/pageLayout/header/PageTitle";
-import ProjectLayout from "@/components/projectLayout";
 import { projects } from "@/data/projects";
 import { sandboxProjects } from "@/data/sandbox";
 import type { Project } from "@/types/project";
 import Head from "next/head";
 import type { GetStaticPaths, GetStaticProps } from "next/types";
+import ProjectLayout from "../../../lib/layouts/projectLayout";
+import DashboardLayout from "../../../lib/layouts/dashboardLayout";
+import { titleStyle } from "../../../lib/layouts/dashboardLayout/header/PageTitle";
 
 const ProjectPage = ({project}: {project: Project}) => {
   const projectTitle = 
@@ -28,9 +28,9 @@ const ProjectPage = ({project}: {project: Project}) => {
           key="description"
         />
       </Head>
-      <PageLayout pageTitle={projectTitle}>
+      <DashboardLayout pageTitle={projectTitle}>
         <ProjectLayout project={project}/>
-      </PageLayout>
+      </DashboardLayout>
     </>
   )
 };

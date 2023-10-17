@@ -38,5 +38,19 @@ export const projects: Project[] = [
     url: 'http://cschulzke.pythonanywhere.com/',
     description: `This REST API is built with Flask in Python. 
     I wanted to learn to utilize more languages for building REST APIs, so I built this simple math API.`
+  },
+  {
+    key: 'portfolio',
+    title: "This Portfolio!",
+    url: 'http://christophschulzke.com/',
+    description: `
+    This portfolio is also a display of my code skills!
+    It's hosted with Vercel from a public GitHub repository.
+    Feel free to check it out and borrow the code.
+    But as always, code responsibly as I am not responsible for any 
+    financial, social, physical, or other damage that results from the use of this code.
+    `
   }
 ]
+// Replace all of these links with buttons that go to either the live site or the GitHub repo
+// Obviously, proprietary code with not have a link to the repo.

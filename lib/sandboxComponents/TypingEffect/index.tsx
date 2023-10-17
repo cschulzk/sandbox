@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+// Have this type out a short poem or something.
+// Have it pause extra long at periods
+
 function TypingEffect({text}: {text: string}) {
   const [displayText, setDisplayText] = useState<string[]>([]); // Text that's currently displayed
   const delay = 500; // Delay in ms
