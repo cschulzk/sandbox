@@ -1,4 +1,4 @@
-const descriptionPositioning = 'w-1/2 h-full'
+const descriptionPositioning = 'w-full md:w-1/2 md:h-full'
 const descriptionFont = 'text-lg'
 
 const ProjectDescription = ({description}: {description: string}) => {

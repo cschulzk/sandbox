@@ -1,34 +1,42 @@
+import GitHubIcon from "../icons/socialIcons/GitHubIcon";
+import HackerRankIcon from "../icons/socialIcons/HackerRankIcon";
+import LinkedInIcon from "../icons/socialIcons/LinkedInIcon";
 import Copyright from "./Copyright";
 
-const footerPositioning = 'flex h-footer w-full';
+const footerPositioning = 'flex md:h-footer w-full py-1';
 const footerStyling = 'border-t-[1px] border-slate-300/75';
-const mobileStyle = 'flex-col justify-center items-center sm:flex-row sm:justify-between sm:items-center';
+const mobileLayout = 'flex-col justify-center items-center sm:flex-row sm:justify-between sm:items-center';
+
+const iconStyles = 'mx-1'
 
 const Footer = () => {
   return (
-    <footer className={`${footerPositioning} ${mobileStyle}  ${footerStyling}`}>
+    <footer className={`${footerPositioning} ${mobileLayout} ${footerStyling}`}>
       <div className={`flex flex-row justify-start items-center w-1/3`}>
         {/* Replace all of the text with the icons */}
         <a 
           rel='noreferrer' 
           target="_blank" 
-          href="https://www.linkedin.com/in/christoph-schulzke/"
+          href="https://github.com/cschulzk"
+          className={iconStyles}
         >
-          LinkedIn
+          <GitHubIcon />
         </a>
         <a 
           rel='noreferrer' 
           target="_blank" 
-          href="https://github.com/cschulzk"
+          href="https://www.linkedin.com/in/christoph-schulzke/"
+          className={iconStyles}
         >
-          GitHub
+          <LinkedInIcon />
         </a>
         <a 
           rel='noreferrer' 
           target="_blank" 
           href="https://www.hackerrank.com/christophschulz1"
+          className={iconStyles}
         >
-          HackerRank
+          <HackerRankIcon />
         </a>
       </div>
       <Copyright />

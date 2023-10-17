@@ -1,12 +1,10 @@
-const screenshotContainer = 'w-1/2 h-full'
+const screenshotContainer = 'w-full md:w-1/2 md:h-full'
 const screenshotPositioning = 'flex flex-col justify-center items-center w-full h-full'
 
 const ProjectScreenshots = () => {
   return (
-    <div className={`${screenshotContainer}`}>
-      <div className={`${screenshotPositioning}`}>
-        Screenshots
-      </div>
+    <div className={`${screenshotContainer} ${screenshotPositioning}`}>
+      Screenshots
     </div>
   )
 };
