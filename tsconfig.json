@@ -15,7 +15,9 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "sandbox-lib/*": ["./sandbox-lib/*"],
+      "public/*": ["./public/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
