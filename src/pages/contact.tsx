@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import DashboardLayout from '../../lib/layouts/dashboardLayout'
+import DashboardLayout from '../../sandbox-lib/layouts/dashboardLayout'
 
 export default function Home() {
   return (

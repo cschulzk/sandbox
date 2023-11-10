@@ -1,5 +1,5 @@
 import React from 'react'
-import SandboxWrapper from '../../../lib/layouts/sandboxWrapper'
+import SandboxWrapper from '../../../sandbox-lib/layouts/sandboxWrapper'
 
 export default function Home() {
   return (
