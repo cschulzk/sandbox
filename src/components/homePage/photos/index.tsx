@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import image1 from '@/images/corona-arch.jpg'
-import image2 from '@/images/pc-beach.jpg'
-import image3 from '@/images/hawaii.jpg'
-import image4 from '@/images/redwoods.jpg'
-import image5 from '@/images/mona-rope-swing.jpg'
+import image1 from '@/data/images/corona-arch.jpg'
+import image2 from '@/data/images/pc-beach.jpg'
+import image3 from '@/data/images/hawaii.jpg'
+import image4 from '@/data/images/redwoods.jpg'
+import image5 from '@/data/images/mona-rope-swing.jpg'
 
 const Photos = () => {
   const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
