@@ -39,7 +39,7 @@ export const GitHubIcon = () => {
   return (
     <SocialIcon
       src={GHLIbug}
-      alt="Github Icon"
+      alt="Christoph's Github Profile"
       href="https://github.com/cschulzk"
     />
   )
@@ -49,7 +49,7 @@ export const LinkedInIcon = () => {
   return (
     <SocialIcon
     src={LIbug}
-    alt="LinkedIn Icon"
+    alt="Christoph's LinkedIn Profile"
     href="https://www.linkedin.com/in/christoph-schulzke/"
   />
   )
@@ -59,7 +59,7 @@ export const HackerRankIcon = () => {
   return (
     <SocialIcon
       src={HRbug}
-      alt="LinkedIn Icon"
+      alt="Christoph's HackerRank Profile"
       href="https://www.hackerrank.com/christophschulz1"
       customStyle="bg-black dark:bg-inherit"
     />

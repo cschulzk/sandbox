@@ -1,7 +1,7 @@
 // import { type ArticleWithSlug, getAllArticles } from '@/sandbox-lib/articles'
 import MainLayout from '../layout'
 import { Container } from '../../sandbox-lib/general/containers/MainContainer'
-import { GitHubIcon, LinkedInIcon, HackerRankIcon } from '../../sandbox-lib/general/icons/socialIcons'
+import { GitHubIcon, LinkedInIcon, HackerRankIcon } from '../data/icons/socialIcons'
 import Photos from '@/components/homePage/photos'
 import ProjectsCard from '@/components/homePage/projectsCard'
 

@@ -1,191 +1,24 @@
-import { useEffect, useRef } from 'react'
-import { usePathname } from 'next/navigation'
-
 import MobileNav from './MobileNav'
 import ThemeToggle from './ThemeToggle'
 import { Avatar, AvatarContainer } from './Avatar'
 import DesktopNavigation from './DesktopNav'
 import { Container } from 'sandbox-lib/general/containers/MainContainer'
 
-function clamp(number: number, a: number, b: number) {
-  const min = Math.min(a, b)
-  const max = Math.max(a, b)
-  return Math.min(Math.max(number, min), max)
-}
-
 export default function MainHeader() {
-  const isHomePage = usePathname() === '/tw'
-  // const isHomePage = usePathname() === '/'
-
-  const headerRef = useRef<React.ElementRef<'div'>>(null)
-  const avatarRef = useRef<React.ElementRef<'div'>>(null)
-  const isInitial = useRef(true)
-
-  useEffect(() => {
-    const downDelay = avatarRef.current?.offsetTop ?? 0
-    const upDelay = 64
-
-    function setProperty(property: string, value: string) {
-      document.documentElement.style.setProperty(property, value)
-    }
-
-    function removeProperty(property: string) {
-      document.documentElement.style.removeProperty(property)
-    }
-
-    function updateHeaderStyles() {
-      if (!headerRef.current) {
-        return
-      }
-
-      const { top, height } = headerRef.current.getBoundingClientRect()
-      const scrollY = clamp(
-        window.scrollY,
-        0,
-        document.body.scrollHeight - window.innerHeight,
-      )
-
-      if (isInitial.current) {
-        setProperty('--header-position', 'sticky')
-      }
-
-      setProperty('--content-offset', `${downDelay}px`)
-
-      if (isInitial.current || scrollY < downDelay) {
-        setProperty('--header-height', `${downDelay + height}px`)
-        setProperty('--header-mb', `${-downDelay}px`)
-      } else if (top + height < -upDelay) {
-        const offset = Math.max(height, scrollY - upDelay)
-        setProperty('--header-height', `${offset}px`)
-        setProperty('--header-mb', `${height - offset}px`)
-      } else if (top === 0) {
-        setProperty('--header-height', `${scrollY + height}px`)
-        setProperty('--header-mb', `${-scrollY}px`)
-      }
-
-      if (top === 0 && scrollY > 0 && scrollY >= downDelay) {
-        setProperty('--header-inner-position', 'fixed')
-        removeProperty('--header-top')
-        removeProperty('--avatar-top')
-      } else {
-        removeProperty('--header-inner-position')
-        setProperty('--header-top', '0px')
-        setProperty('--avatar-top', '0px')
-      }
-    }
-
-    function updateAvatarStyles() {
-      if (!isHomePage) {
-        return
-      }
-
-      const fromScale = 1
-      const toScale = 36 / 64
-      const fromX = 0
-      const toX = 2 / 16
-
-      const scrollY = downDelay - window.scrollY
-      const scale = clamp((scrollY * (fromScale - toScale)) / downDelay + toScale, fromScale, toScale)
-      const x = clamp((scrollY * (fromX - toX)) / downDelay + toX, fromX, toX)
-
-      setProperty(
-        '--avatar-image-transform',
-        `translate3d(${x}rem, 0, 0) scale(${scale})`,
-      )
-
-      const borderScale = 1 / (toScale / scale)
-      const borderX = (-toX + x) * borderScale
-      const borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
-
-      setProperty('--avatar-border-transform', borderTransform)
-      setProperty('--avatar-border-opacity', scale === toScale ? '1' : '0')
-    }
-
-    function updateStyles() {
-      updateHeaderStyles()
-      updateAvatarStyles()
-      isInitial.current = false
-    }
-
-    updateStyles()
-    window.addEventListener('scroll', updateStyles, { passive: true })
-    window.addEventListener('resize', updateStyles)
-
-    return () => {
-      window.removeEventListener('scroll', updateStyles)
-      window.removeEventListener('resize', updateStyles)
-    }
-  }, [isHomePage])
-
   return (
     <>
       <header
         className="pointer-events-none relative z-50 flex flex-none flex-col"
-        style={{
-          height: 'var(--header-height)',
-          marginBottom: 'var(--header-mb)',
-        }}
       >
-        {isHomePage && (
-          <>
-            <div
-              ref={avatarRef}
-              className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
-            />
-            <Container
-              className="top-0 order-last -mb-3 pt-3"
-              style={{
-                position:
-                  'var(--header-position)' as React.CSSProperties['position'],
-              }}
-            >
-              <div
-                className="top-[var(--avatar-top,theme(spacing.3))] w-full"
-                style={{
-                  position:
-                    'var(--header-inner-position)' as React.CSSProperties['position'],
-                }}
-              >
-                <div className="relative">
-                  <AvatarContainer
-                    className="absolute left-0 top-3 origin-left transition-opacity"
-                    style={{
-                      opacity: 'var(--avatar-border-opacity, 0)',
-                      transform: 'var(--avatar-border-transform)',
-                    }}
-                  />
-                  <Avatar
-                    large
-                    className="block h-16 w-16 origin-left"
-                    style={{ transform: 'var(--avatar-image-transform)' }}
-                  />
-                </div>
-              </div>
-            </Container>
-          </>
-        )}
         <div
-          ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
-          style={{
-            position:
-              'var(--header-position)' as React.CSSProperties['position'],
-          }}
         >
-          <Container
-            className="top-[var(--header-top,theme(spacing.6))] w-full"
-            style={{
-              position:
-                'var(--header-inner-position)' as React.CSSProperties['position'],
-            }}
-          >
+          <Container>
             <div className="relative flex gap-4">
               <div className="flex flex-1">
-                {!isHomePage && (
-                  <AvatarContainer>
-                    <Avatar />
-                  </AvatarContainer>
-                )}
+                <AvatarContainer>
+                  <Avatar />
+                </AvatarContainer>
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNav className="pointer-events-auto md:hidden" />
@@ -200,12 +33,6 @@ export default function MainHeader() {
           </Container>
         </div>
       </header>
-      {isHomePage && (
-        <div
-          className="flex-none"
-          style={{ height: 'var(--content-offset)' }}
-        />
-      )}
     </>
   )
 }
