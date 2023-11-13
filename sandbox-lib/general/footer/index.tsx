@@ -1,4 +1,4 @@
-import { GitHubIcon, HackerRankIcon, LinkedInIcon } from "../icons/socialIcons";
+import { GitHubIcon, HackerRankIcon, LinkedInIcon } from "../../../src/data/icons/socialIcons";
 import Copyright from "./Copyright";
 
 const footerPositioning = 'flex md:h-footer w-full py-1';

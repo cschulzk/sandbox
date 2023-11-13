@@ -9,7 +9,7 @@ export const Container = ({
 }) => {
   return (
     <div 
-      className={`mx-auto w-full max-w-2xl lg:max-w-5xl relative px-4 sm:px-8 lg:px-12 ${className}`} 
+      className={`mx-auto w-full max-w-2xl lg:max-w-5xl relative px-4 ${className}`} 
       {...props}
     >
       {children}
